@@ -57,6 +57,14 @@ def furniture(request):
     print(list_furnitures)
     return render(request, 'webapp/furniture.html', context={'furniture': list_furnitures})
 
+def addtocart(request, pk):
+    product = Product.objects.get(pk=pk)
+    cart = Cart.objects.create(owner=request.user, product=product)
+    return redirect('home')
+
+def cart(request):
+    cart=Cart.objects.filter(owner=request.user)
+    return render(request, "webapp/cart.html", {'cart': cart})
 
 def contact(request):
     if request.method == 'POST':

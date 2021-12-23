@@ -106,6 +106,10 @@ class Subscriber(models.Model):
     def __str__(self):
         return str(self.id) + " " + self.email
 
+class Cart(models.Model):
+    product=models.ForeignKey(Product, on_delete=CASCADE)
+    owner=models.ForeignKey(Account, on_delete=CASCADE)
+
 
 
 

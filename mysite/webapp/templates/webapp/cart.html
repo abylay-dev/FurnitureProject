@@ -11,23 +11,27 @@
 {% endblock %}
 
 {% block main_section %}
-    {% for c in cart %}
-    <img src='{{ c.product.image.url }}'  alt="{{ c.product.name }}" style="width: {{ c.product.size }}" >
-    <div class="detail-box">
-        <h5>
-            {{ c.product.name }}
-        </h5>
-        <div class="price_box">
-            <h6 class="price_heading">
-                <span>$</span> {{ c.product.price }}.00
-            </h6>
-            <a href="">
-                Buy Now
-            </a>
+<div class="row">
+      {% for c in cart %}
+      <div class="col-md-4">
+        <div class="box">
+          <div class="img-box">
+            <img src='{{ c.image.url }}'  alt="{{ c.name }}" style="width: {{ c.size }}%;" >
+          </div>
+          <div class="detail-box">
+            <h5>
+              {{ c.name }}
+            </h5>
+            <div class="price_box">
+              <h6 class="price_heading">
+                <span>$</span> {{ f.price }}.00
+              </h6>
+            </div>
+            <p>
+              {{ c.description }}
+            </p>
+          </div>
         </div>
-        <p>
-            {{ c.product.description }}
-        </p>
-    </div>
     {% endfor %}
+  </div>
 {% endblock %}
