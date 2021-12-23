@@ -3,35 +3,36 @@
 {% block title %}Furniture{% endblock %}
 
 {% block header_nav_section %}
-  <div class="sub_page">
+<div class="sub_page">
     <div class="hero_area">
-      {% include 'webapp/includes/header.html' %}
+        {% include 'webapp/includes/header.html' %}
     </div>
-  </div>
+</div>
 {% endblock %}
 
 {% block main_section %}
 <div class="row">
-      {% for c in cart %}
-      <div class="col-md-4">
+    {% for c in cart %}
+    <div class="col-md-4">
         <div class="box">
-          <div class="img-box">
-            <img src='{{ c.image.url }}'  alt="{{ c.name }}" style="width: {{ c.size }}%;" >
-          </div>
-          <div class="detail-box">
-            <h5>
-              {{ c.name }}
-            </h5>
-            <div class="price_box">
-              <h6 class="price_heading">
-                <span>$</span> {{ f.price }}.00
-              </h6>
+            <div class="img-box">
+                <img src='{{ c.image.url }}'  alt="{{ c.name }}" style="width: {{ c.size }}%;" >
             </div>
-            <p>
-              {{ c.description }}
-            </p>
-          </div>
+            <div class="detail-box">
+                <h5>
+                    {{ c.name }}
+                </h5>
+                <div class="price_box">
+                    <h6 class="price_heading">
+                        <span>$</span> {{ f.price }}.00
+                    </h6>
+                </div>
+                <p>
+                    {{ c.description }}
+                </p>
+            </div>
         </div>
+    </div>
     {% endfor %}
-  </div>
+</div>
 {% endblock %}
