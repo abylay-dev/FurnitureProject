@@ -77,8 +77,8 @@ class Product(models.Model):
         return str(self.id) + " " + self.name
 
 class Order_Product(models.Model):
-    productCode = models.ForeignKey('Product', on_delete=models.CASCADE, null=True)
-    customerID = models.ForeignKey('Account', on_delete=models.CASCADE, null=True)
+    # productCode = models.ForeignKey('Product', on_delete=models.CASCADE, null=True)
+    # customerID = models.ForeignKey('Account', on_delete=models.PROTECT, null=True)
     order_date = models.DateTimeField('Order date', auto_now_add=True)
     status = models.CharField('Status', max_length=15, default='Completed')
     comment = models.TextField('Comment', null=True)
