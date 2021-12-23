@@ -1,0 +1,21 @@
+{% extends 'webapp/layout.html' %}
+
+{% block title %}Furniture{% endblock %}
+
+{% block header_nav_section %}
+  <div class="sub_page">
+    <div class="hero_area">
+      {% include 'webapp/includes/header.html' %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block main_section %}
+  <section class="about_section layout_padding">
+    <div class="container about_container">
+      <div class="col-sm-10 mx-auto" style="color: #000000;">
+        {% include 'webapp/includes/profileEdit.html' %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

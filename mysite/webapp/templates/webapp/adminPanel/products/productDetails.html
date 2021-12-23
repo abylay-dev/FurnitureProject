@@ -1,0 +1,21 @@
+{% extends "webapp/adminPanel/adminPanel.html" %}
+
+{% block admin-section %}
+<div class="col-sm-12">
+  <div class="px-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold"> {{ furniture.name }} </h1>
+      <p class="lead">
+        Amount : {{ furniture.amount }} items
+        <br>
+        Description : {{ furniture.description }}
+      </p>
+      <img src="{{ furniture.image.url }}" alt="{{ furniture.name }}" style="width: 50%">
+      <p class="col-md-8 fs-4">
+        Price : {{ furniture.price }}.00 $
+      </p>
+      <a class="btn btn-warning" href="{% url 'update-product' furniture.id %}" role = "button">EDIT</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

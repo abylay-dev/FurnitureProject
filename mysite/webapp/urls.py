@@ -1,0 +1,32 @@
+from django.urls import path, include
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='home'),
+    path('subscribe/', views.subscribe, name='subscribe'),
+    path('about/', views.about, name='about'),
+    path('furniture/', views.furniture, name='furniture'),
+    path('contact/', views.contact, name='contact'),
+    path('login/', views.user_login, name='login'),
+    path('logout/', views.user_logout, name='logout'),
+    path('register/', views.register, name='register'),
+    path('profile/<int:pk>/', views.ProfileUpdateView.as_view(), name='profile'),
+    path('adminPanel/', views.adminPanel, name='admin-panel'),
+    path('adminPanel/accounts/', views.adminAccounts, name='admin-accounts'),
+    path('adminPanel/accounts/add', views.accountAdd, name='add-account'),
+    path('adminPanel/accounts/<int:pk>/update', views.AccountUpdateView.as_view(), name='edit-account'),
+    path('adminPanel/accounts/password-change/', views.change_password, name='password-change'),
+    path('adminPanel/accounts/<int:pk>/delete', views.AccountDeleteView.as_view(), name='delete-account'),
+    path('adminPanel/products/', views.adminProducts, name='admin-products'),
+    path('adminPanel/product/add', views.productAdd, name='add-product'),
+    path('adminPanel/product/<int:pk>', views.ProductDetailView.as_view(), name='details-product'),
+    path('adminPanel/product/<int:pk>/update', views.ProductUpdateView.as_view(), name='update-product'),
+    path('adminPanel/product/<int:pk>/delete', views.ProductDeleteView.as_view(), name='delete-product'),
+    path('adminPanel/contacts/', views.adminContactUs, name='admin-contact'),
+    path('adminPanel/contact/<int:pk>/delete', views.ContactDeleteView.as_view(), name='delete-contact'),
+    path('adminPanel/subscribers/', views.adminSubscribers, name='admin-subscribers'),
+    path('adminPanel/subscriber/<int:pk>/delete', views.SubscriberDeleteView.as_view(), name='delete-subscriber'),
+    path('adminPanel/orders/', views.adminOrders, name='admin-orders'),
+    path('addtocart/<int:pk>', views.addtocart, name='tocart'),
+    path('cart/', views.cart, name='cart'),
+]

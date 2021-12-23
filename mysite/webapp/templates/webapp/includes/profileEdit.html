@@ -1,0 +1,25 @@
+{% load static %}
+
+<h2>Edit profile</h2>
+<form enctype="multipart/form-data" method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    <label> Full name </label>
+    {{ form.full_name }}
+  </div>
+  <div class="form-group">
+    <label>Gender: </label>
+    {{ form.gender }}
+  </div>
+  <div class="form-group">
+    <label>Email: </label>
+    {{ form.email }}
+  </div>
+  <div class="form-group">
+    <label>Phone number: </label>
+    {{ form.phoneNumber }}
+  </div>
+  <div class="form-group">
+    <button class="btn btn-success">Save</button>
+  </div>
+</form>

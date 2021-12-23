@@ -1,0 +1,153 @@
+@media (max-width: 1300px) {
+  .banner_section .detail_box {
+    padding-left: 25px;
+  }
+}
+
+@media (max-width: 1120px) {}
+
+@media (max-width: 992px) {
+  .hero_area {
+    height: auto;
+  }
+
+  .quote_btn-container a {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  .banner_section {
+    padding: 45px 0 175px 0;
+  }
+
+  .banner_section .detail_box h1 {
+    font-size: 3rem;
+  }
+
+  .banner_section .slick_banner_nav .slick_nav-item {
+    width: 100px;
+    height: 85px;
+  }
+
+  .quote_btn-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+
+  .banner_section {
+    padding: 45px 0 75px 0;
+  }
+
+  .banner_section .detail_box {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .banner_section .img-box {
+    height: 450px;
+  }
+
+
+  .banner_section .slick_banner_nav {
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .about_section .row {
+    flex-direction: column-reverse;
+  }
+
+  .about_section .img-box {
+    margin-top: 45px;
+
+  }
+
+  .decoration_section .detail-box {
+    margin-top: 45px;
+  }
+
+  .about_section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .contact_section {
+    padding-top: 450px;
+  }
+
+  .footer_bg {
+    padding-top: 75px;
+  }
+
+  .info_section .row>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .info_section .info_contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info_section .social_box {
+    margin-top: 25px;
+    justify-content: center;
+  }
+
+  .info_section .social_box a {
+    margin: 0 5px;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .banner_section .detail_box h1 {
+    font-size: 3.5rem;
+  }
+
+  .banner_section .slick_banner_nav .slick_nav-item {
+    width: 75px;
+    height: 60px;
+  }
+
+  .banner_section .img-box {
+    height: 425px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .banner_section .img-box {
+    height: 375px;
+  }
+}
+
+@media (max-width: 420px) {
+  .banner_section .detail_box h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .banner_section .img-box {
+    height: 325px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}

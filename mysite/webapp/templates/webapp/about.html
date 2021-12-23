@@ -1,0 +1,19 @@
+{% extends "webapp/layout.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block header_nav_section %}
+  <div class="sub_page">
+    <div class="hero_area">
+      {% include 'webapp/includes/header.html' %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block main_section %}
+  <!-- about section -->
+  <section class="about_section layout_padding">
+    {% include 'webapp/includes/about_section.html' %}
+  </section>
+  <!-- end about section -->
+{% endblock %}

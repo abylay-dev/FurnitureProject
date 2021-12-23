@@ -1,0 +1,214 @@
+{% load static %}
+
+<section class="furniture_section layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2>
+        Our Furniture
+      </h2>
+      <p>
+        which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't an
+      </p>
+    </div>
+    <div class="row">
+      {% for f in furniture %}
+      <div class="col-md-4">
+        <!--<div class="box">
+          <div class="img-box">
+            <img src='{{ f.image.url }}'  alt="{{ f.name }}" style="width: {{ f.size }}%;" >
+          </div>
+          <div class="detail-box">
+            <h5>
+              {{ f.name }}
+            </h5>
+            <div class="price_box">
+              <h6 class="price_heading">
+                <span>$</span> {{ f.price }}.00
+              </h6>
+              <a href="">
+                Buy Now
+              </a>
+            </div>
+            <p>
+              {{ f.description }}
+            </p>
+            <a href=""><span>Read More</span></a>
+          </div>
+        </div>-->
+        <div class="card" style="width: 18rem;">
+          <img src='{{ f.image.url }}'  alt="{{ f.name }}" style="width: {{ f.size }}%;" class="card-img-top mx-auto">
+          <div class="card-body">
+            <h5 class="card-title">{{ f.name }}</h5>
+            <p class="card-text">{{ f.description }}</p>
+            <div class="price_box">
+              <h6 class="price_heading">
+                <span style="color: #14dc56;">$</span> {{ f.price }}.00
+              </h6>
+              {% if request.user.is_authenticated %}
+              <a href="{% url 'tocart' pk=f.pk %}" style="color: #14dc56;">
+                Buy Now
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <!--<div class="col-md-4">
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static 'webapp/images/brown_armchair.png' %}" alt=""  style="width: 80%;">
+          </div>
+          <div class="detail-box">
+            <h5>
+              brown armchair
+            </h5>
+            <div class="price_box">
+              <h6 class="price_heading">
+                <span>$</span> 150.00
+              </h6>
+              <a href="">
+                Buy Now
+              </a>
+            </div>
+            <p>
+              variations of passages of Lorem Ipsum avai
+            </p>
+            <a href=""><span>Read More</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static 'webapp/images/bed_design.png' %}" alt=""  style="width: 100%;">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Bed Design
+            </h5>
+            <div class="price_box">
+              <h6 class="price_heading">
+                <span>$</span> 300.00
+              </h6>
+              <a href="">
+                Buy Now
+              </a>
+            </div>
+            <p>
+              variations of passages of Lorem Ipsum avai
+            </p>
+            <a href=""><span>Read More</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static 'webapp/images/yellow-brown.png' %}" alt="" style="width: 70%;">
+          </div>
+          <div class="detail-box">
+            <h5>
+              House Chair Design
+            </h5>
+            <div class="price_box">
+              <h6 class="price_heading">
+                <span>$</span> 200.00
+              </h6>
+              <a href="">
+                Buy Now
+              </a>
+            </div>
+            <p>
+              variations of passages of Lorem Ipsum avai
+            </p>
+            <a href=""><span>Read More</span></a>
+          </div>
+        </div>
+      </div>-->
+
+      <!--{% with width='80%' name='brown armchair' price='150.00'%}
+      <div class="col-md-4">
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static 'webapp/images/brown_armchair.png' %}" alt=""  style="width: {{ width }};">
+          </div>
+          <div class="detail-box">
+            <h5>
+              {{ name }}
+            </h5>
+            <div class="price_box">
+              <h6 class="price_heading">
+                <span>$</span> {{ price }}
+              </h6>
+              <a href="">
+                Buy Now
+              </a>
+            </div>
+            <p>
+              variations of passages of Lorem Ipsum avai
+            </p>
+            <a href=""><span>Read More</span></a>
+          </div>
+        </div>
+      </div>
+      {% endwith %}
+
+      {% with width='100%' name='Bed Design' price='300.00'%}
+      <div class="col-md-4">
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static 'webapp/images/bed_design.png' %}" alt=""  style="width: {{ width }};">
+          </div>
+          <div class="detail-box">
+            <h5>
+              {{ name }}
+            </h5>
+            <div class="price_box">
+              <h6 class="price_heading">
+                <span>$</span> {{ price }}
+              </h6>
+              <a href="">
+                Buy Now
+              </a>
+            </div>
+            <p>
+              variations of passages of Lorem Ipsum avai
+            </p>
+            <a href=""><span>Read More</span></a>
+          </div>
+        </div>
+      </div>
+      {% endwith %}
+
+      {% with width='70%' name='House Chair Design' price='200.00'%}
+      <div class="col-md-4">
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static 'webapp/images/yellow-brown.png' %}" alt="" style="width: {{ width }};">
+          </div>
+          <div class="detail-box">
+            <h5>
+              {{ name }}
+            </h5>
+            <div class="price_box">
+              <h6 class="price_heading">
+                <span>$</span> {{ price }}
+              </h6>
+              <a href="">
+                Buy Now
+              </a>
+            </div>
+            <p>
+              variations of passages of Lorem Ipsum avai
+            </p>
+            <a href=""><span>Read More</span></a>
+          </div>
+        </div>
+      </div>
+      {% endwith %}-->
+
+    </div>
+  </div>
+</section>

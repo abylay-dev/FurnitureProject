@@ -1,0 +1,154 @@
+{% extends "webapp/layout.html" %}
+{% load static %}
+
+{% block title %}A&D Furniture{% endblock %}
+
+{% block header_nav_section %}
+<div class="hero_area">
+  {% include 'webapp/includes/header.html' %}
+
+  <!-- banner section -->
+  <section class="banner_section ">
+    <div class="banner-container">
+      <div class="custom_slick_banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-5">
+              <div class="detail_box">
+                <h1>
+                  Kazakh-style<br>
+                  sofa
+                </h1>
+                <p>
+                  There are many variations of passages of Lorem Ipsum available,
+                  red alteration in some form, by injected humou
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-7">
+              <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{% static 'webapp/images/banner-img1.png' %}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'webapp/images/banner-img2.png' %}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'webapp/images/banner-img3.png' %}" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+             <!-- <div class="img-box">
+                <img src="{% static 'webapp/images/banner-img1.png' %}" alt="">
+              </div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end banner section -->
+</div>
+{% endblock %}
+
+{% block main_section %}
+
+<!-- furniture section -->
+{% include 'webapp/includes/furniture_section.html' %}
+<!-- end furniture section -->
+
+
+<!-- decoration section -->
+<section class="decoration_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-box">
+          <img src="{% static 'webapp/images/decoration-img.png' %}" alt="">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>
+              New Furniture for <br>
+              Home Decoration
+            </h2>
+          </div>
+          <p>
+            variations of passages of Lorem Ipsum available, but the majority
+          </p>
+          <!--<a href=""><span>Read More</span></a>-->
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal">
+            <span>Read More</span>
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content" style="color: #000000">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="newsModalLabel">New Furniture for Home Decoration</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <div class="row mt-5">
+                      <div class="col-sm-12">
+                        <div class="p-5 mb-4 bg-light rounded-3">
+                          <div class="container-fluid py-5">
+                            <p class="lead">
+                              <img src="{% static 'webapp/images/decoration-img.png' %}" alt="" style="width: 100%;">
+                            </p>
+                            <p class="fs-4">
+                              We often tend to prefer bright, positive tones. And this is understandable:
+                              colors can create a certain mood, affect the perception of the subject. Therefore, for their
+                              interior, some people want to choose more fun shades. Others, however, want to embody in the
+                              rooms more calm, pacifying tones that will be conducive to relaxation. In this article, we will
+                              consider the stylish colors of furniture in 2021, their nuances and options for embodiment in
+                              the interior.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end decoration section -->
+
+<!-- <hr style="color: #ee6206; background-color: #ffffff; height: 3px; border: none;"> -->
+
+  <!-- about section -->
+<section class="about_section layout_padding">
+  {% include 'webapp/includes/about_section.html' %}
+</section>
+<!-- end about section -->
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% load static %}
+
+<div class="container about_container ">
+  <div class="row">
+    <div class="col-md-5 col-lg-4">
+      <div class="img-box">
+        <img src="{% static 'webapp/images/img2.png' %}" alt="">
+      </div>
+    </div>
+    <div class="col-md-7 col-lg-8">
+      <div class="detail-box">
+        <div class="heading_container">
+          <h2>
+            About Our furniture
+          </h2>
+        </div>
+        <p>
+          which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum,
+          you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum </p>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAbout">
+          <span>Read More</span>
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalAbout" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="color: #000000">
+              <div class="modal-header">
+                <h5 class="modal-title" id="newsModalLabel">New Furniture for Home Decoration</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row mt-5">
+                    <div class="col-sm-12">
+                      <div class="p-5 mb-4 bg-light rounded-3">
+                        <div class="container-fluid py-5">
+                          <p class="lead">
+                            <img src="{% static 'webapp/images/img2.png' %}" alt="" style="width: 100%;">
+                          </p>
+                          <p class="fs-4">
+                            &emsp;Our furniture is constructed of solid wood by A&D Furniture builders from Holmes, Wayne
+                            and Tuscarawas counties in Ohio’s Amish country. This area boasts the largest concentration
+                            of hardwood furniture builders in the United States.<br>
+                            &emsp;The selection we have in the store and on the website is only a sliver of available styles.
+                            Visit the store and browse our catalogs to see other pieces. If you’re out of town, contact
+                            Wood Grains owner Dulcie Hankins, who can help you find the right furnishings for your home
+                            and have them shipped directly to you.<br>
+                            &emsp;We want you to have exactly the piece you imagine. Customize the size, wood species, finish
+                            or fabric on almost any furnishing in our builders’ collections. We will work to ensure the
+                            final product meets your specifications. We can also match stains and finishes of your existing
+                            furniture.
+
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

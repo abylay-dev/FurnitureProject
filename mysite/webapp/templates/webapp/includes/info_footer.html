@@ -1,0 +1,95 @@
+{% load static %}
+
+<!-- info section -->
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-lg-9">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="info_detail">
+                <h5>
+                  Visit Our Shop
+                </h5>
+                <p>
+                  Randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info_detail">
+                <h5>
+                  Customer Service
+                </h5>
+                <p>
+                  Randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <h5>
+            Contact Us
+          </h5>
+          <div class="info_contact">
+            <a href="">
+              <span>
+                Almaty, Manasa 34/1
+              </span>
+            </a>
+            <a href="">
+              <span>
+                +997 777 797 79 97
+              </span>
+            </a>
+            <a href="">
+              <span>
+                andfurniture@gmail.com
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row info_form_social_row">
+        <div class="col-md-8 col-lg-9">
+          <div class="info_form">
+            <h5>
+              Sign up for our newsletter
+            </h5>
+            <form action="{% url 'subscribe' %}" enctype="multipart/form-data" method="post">
+              {% csrf_token %}
+              <input name='email' type="email" placeholder="Enter your email">
+              <button type="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <div class="social_box">
+            <a href="https://www.facebook.com/smart.furniture.kz/">
+              <img src="{% static 'webapp/images/facebook.png' %}" width="100%">
+            </a>
+            <a href="https://twitter.com/smartfurniture">
+              <img src="{% static 'webapp/images/twitter.png' %}" width="100%">
+            </a>
+            <a href="linkedin.com/company/smart-furniture">
+              <img src="{% static 'webapp/images/linkedin.png' %}" width="100%">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <div class="container">
+      <p>
+        &copy; <span>2021</span> All Rights Reserved By Abylay Sagymbayev & Didar Orynbassar
+      </p>
+    </div>
+  </section>
+  <!-- footer section -->

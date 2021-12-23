@@ -1,0 +1,33 @@
+{% extends 'webapp/layout.html' %}
+
+{% block title %}Furniture{% endblock %}
+
+{% block header_nav_section %}
+  <div class="sub_page">
+    <div class="hero_area">
+      {% include 'webapp/includes/header.html' %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block main_section %}
+    {% for c in cart %}
+    <img src='{{ c.product.image.url }}'  alt="{{ c.product.name }}" style="width: {{ c.product.size }}" >
+    <div class="detail-box">
+        <h5>
+            {{ c.product.name }}
+        </h5>
+        <div class="price_box">
+            <h6 class="price_heading">
+                <span>$</span> {{ c.product.price }}.00
+            </h6>
+            <a href="">
+                Buy Now
+            </a>
+        </div>
+        <p>
+            {{ c.product.description }}
+        </p>
+    </div>
+    {% endfor %}
+{% endblock %}

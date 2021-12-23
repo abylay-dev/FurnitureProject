@@ -1,0 +1,15 @@
+{% extends "webapp/adminPanel/adminPanel.html" %}
+
+{% block admin-section %}
+<div class="col-sm-8 mx-auto" style="color: #000000;">
+  <h2>Edit product</h2>
+  <form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div class="form-group">
+      <button class="btn btn-success">Save</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

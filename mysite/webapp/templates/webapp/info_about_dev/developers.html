@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Developers</title>
+</head>
+<body>
+    <h1>Head office address: {{ address }}</h1>
+    <h2> Team leader: <span style="color: red">{{ devs.0.name }}</span></h2>
+    <pre>
+        Phone number: <span style="font-style: italic">{{ devs.0.phone }}</span>
+        Mail address: <a>{{ devs.0.email }}</a>
+        Office hours: {{ devs.0.hours }}
+    </pre>
+
+    <h2> Developer: <span style="color: blue">{{ devs.1.name }}</span></h2>
+    <pre>
+        Phone number: <span style="font-style: italic">{{ devs.1.phone }}</span>
+        Mail address: <a>{{ devs.1.email }}</a>
+        Office hours: {{ devs.1.hours }}
+    </pre>
+</body>
+</html>

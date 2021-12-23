@@ -1,0 +1,55 @@
+{% extends "webapp/layout.html" %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block header_nav_section %}
+  <div class="sub_page">
+    <div class="hero_area">
+      {% include 'webapp/includes/header.html' %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block main_section %}
+  <!-- admin section -->
+
+  <section class="admin mx-auto my-3">
+    <!-- Sidebar -->
+    <div class="sidebar-fixed">
+      <div class="list-group list-group-flush" id="myList">
+        <!--<button class="list-group-item list-group-item-action waves-effect" onclick="window.location.href='{% url 'admin-panel' %}'">Profile</button>-->
+        <button class="list-group-item list-group-item-action waves-effect" onclick="window.location.href='{% url 'admin-accounts' %}'">Accounts</button>
+        <button class="list-group-item list-group-item-action waves-effect" onclick="window.location.href='{% url 'admin-products' %}'">Products</button>
+        <button class="list-group-item list-group-item-action waves-effect" onclick="window.location.href='#'">Order</button>
+        <button class="list-group-item list-group-item-action waves-effect" onclick="window.location.href='{% url 'admin-contact' %}'">Contact us</button>
+        <button class="list-group-item list-group-item-action waves-effect" onclick="window.location.href='{% url 'admin-subscribers' %}'">Subscribers</button>
+      </div>
+    </div>
+  <!-- end Sidebar -->
+
+    <script>
+    // Добавьте активный класс к текущей кнопке (выделите его)
+    var header = document.getElementById("myList");
+    var btns = header.getElementsByClassName("list-group-item list-group-item-action waves-effect");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+    </script>
+
+    <div class="sidebar-fixed container" style="width: 75%;">
+      <div class="py-3">
+        {% block admin-section %}
+        <!--<div class="col-sm-8 mx-auto" style="color: #000000;">
+          {% include 'webapp/includes/profileEdit.html' %}
+        </div>-->
+        {% endblock %}
+      </div>
+    </div>
+  </section>
+
+  <!-- end admin section -->
+{% endblock %}

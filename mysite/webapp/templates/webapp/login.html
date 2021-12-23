@@ -1,0 +1,39 @@
+{% extends 'webapp/layout.html' %}
+
+{% block title %}Log in{% endblock %}
+
+{% block header_nav_section %}
+  <div class="sub_page">
+    <div class="hero_area">
+      {% include 'webapp/includes/header.html' %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block main_section %}
+  <section style="background-color: #2b2127;">
+    <div class="container">
+      <div class="py-5">
+        <div class="col-sm-6 mx-auto" style="color: #ffffff;">
+          <h1> Authorization </h1>
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <!--<div class="form-group">
+              <label>Email : </label>
+              <input type="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Password : </label>
+              <input type="password" name="password" class="form-control">
+            </div>-->
+            <div class="form-group" style="align-items: center;">
+              <button class="btn btn-success">Log in</button>
+              <a class="register" href="{% url 'register' %}">Register</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

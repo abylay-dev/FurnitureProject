@@ -1,0 +1,54 @@
+{% extends 'webapp/layout.html' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block header_nav_section %}
+  <div class="sub_page">
+    <div class="hero_area">
+      {% include 'webapp/includes/header.html' %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block main_section %}
+  <section style="background-color: #2b2127;">
+    <div class="container">
+      <div class="py-5">
+        <div class="col-sm-6 mx-auto" style="color: #ffffff;">
+          <h1> Registration </h1>
+          <form enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <!--<div class="form-group">
+              <label>Full name : </label>
+              <input type="text" name="full_name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Gender : </label>
+              <select class="form-select" aria-label="Default select example" name="gender">
+                <option selected>Open this select menu</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Email : </label>
+              <input type="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Password : </label>
+              <input type="password" name="password" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Re-password : </label>
+              <input type="password" name="re-password" class="form-control">
+            </div>-->
+            <div class="form-group">
+              <button class="btn btn-success">Sing up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

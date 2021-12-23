@@ -1,0 +1,57 @@
+{% load static %}
+
+
+<!-- header section strats -->
+<header class="header_section">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg custom_nav-container ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <span class="logo">
+            A&D Furnitures
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-body">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav ">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}"><span>Home</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}"><span>About</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'furniture' %}"><span>Furnitures</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}"><span>Contact Us</span></a>
+                  </li>
+                  {% if request.user.is_superuser %}
+                  <li class="nav-item">
+                    <a class="nav-link btn btn-outline-dark" href="{% url 'admin-accounts' %}"><span>Admin</span></a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </div>
+              <div class="quote_btn-container">
+                {% if request.user.is_authenticated %}
+                  Welcome, <a href="{% url 'profile' pk=user.id %}" class="mx-2" style="text-decoration:underline; color:#14dc56;">{{ user.full_name }}</a> | <a href="{% url 'logout' %}" class="mx-2">Log out</a>
+                {% else %}
+                <a href="{% url 'login' %}"><span>Login</span>
+                  <i><img src="{% static 'webapp/images/user.png' %}"></i>
+                </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- end header section -->

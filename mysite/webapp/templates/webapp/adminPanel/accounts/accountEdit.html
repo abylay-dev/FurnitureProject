@@ -1,0 +1,17 @@
+{% extends "webapp/adminPanel/adminPanel.html" %}
+
+{% block admin-section %}
+<div class="col-sm-8 mx-auto" style="color: #000000;">
+  <div class="list_add">
+    <h2>Edit an account</h2>
+    <a href="{% url 'password-change' %}" class="btn btn-danger btn-sm">Reset password</a>
+  </div>
+  <form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-group">
+      <button class="btn btn-success" type="submit">Save</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

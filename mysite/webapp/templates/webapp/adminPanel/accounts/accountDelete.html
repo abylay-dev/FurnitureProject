@@ -1,0 +1,13 @@
+{% extends "webapp/adminPanel/adminPanel.html" %}
+
+{% block admin-section %}
+<div class="col-sm-8 mx-auto" align="center" style="color: #000000;">
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group"><h2>Are you sure?</h2></div>
+    <div class="form-group">
+      <button class="btn btn-danger" type="submit">Delete</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
